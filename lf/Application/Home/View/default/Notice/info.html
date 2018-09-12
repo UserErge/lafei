@@ -1,0 +1,11 @@
+<div class="tongzhiview">
+	<div class="tongzhiviewtitle">
+		{$info['title']}
+	</div>
+	<div class="tongzhiviewinfo">
+		<span>发布时间：{:date('Y/m/d H:i:s',$info['addTime'])}</span>
+	</div>
+	<div class="tongzhiviewtxt">
+		{:nl2br($info['content'])}
+	</div>
+</div>

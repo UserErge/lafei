@@ -1,0 +1,58 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>时间管理</h2>
+	</div>
+
+	<ul class="tab-nav nav">
+		<?php foreach($types as $data){ ?>
+			<li <?=$this->iff($type==$data['id'], 'class="current"','')?>><a href="{:U('?type='.$data['id'])}"><?=$data['shortName']?></a></li>
+		<?php } ?>
+	</ul>
+
+	<div class="data-table table-striped">
+		<table>
+			<thead>
+				<tr>
+					<th class="row-selected">
+						<input class="checkbox check-all" type="checkbox">
+					</th>
+					<th>ID</th>
+					<th>彩种</th>
+					<th>期数</th>
+					<th>开奖时间</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="_list" id="config">
+					<tr>
+						<td><input class="ids row-selected" type="checkbox" name="id[]" value="{$config.id}"></td>
+						<td>{$config.id}</td>
+						<td>{$config.title}</td>
+						<td>{$config.actionNo}</td>
+						<td><input type="text" name="actionTime" value="{$config.actionTime}"><input type="hidden" name="id" value="{$config.id}"></td>
+						<td>
+							<a title="保存" href="{:U('update')}" target="ajax" method="post">保存</a>
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+		<!-- 分页 -->
+	    <div class="page">
+	        {$_page}
+	    </div>
+	</div>
+</block>
+
+<block name="script">
+<script type="text/javascript">
+$(function(){
+	
+	//导航高亮
+	$('.side-sub-menu').find('a[href="{:U('Time/index')}"]').closest('li').addClass('current');
+});
+</script>
+</block>

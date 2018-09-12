@@ -1,0 +1,28 @@
+<block name="header">
+<div class="g-header">
+	<div class="m-header">
+		<div class="g-wrap">
+			<h1 class="m-header-logo">{:S('WEB_NAME')}<a class="m-header-logo-link" href="javascript:void(0);"></a></h1>
+			<div class="m-header-toolbar">
+				<a class="m-header-toolbar-btn searchBtn" style="display:none" href="{:U('index/toSearch')}" target="_self" title="搜索"><i class="ico ico-search"></i></a>
+				<php> if(session('user_auth_sign2')!=''){</php>
+				<a class="m-header-toolbar-btn userpageBtn" href="{:U('user/info')}" title="我的夺宝"><i class="ico ico-userpage"></i></a>
+				<php> } else{ </php>
+				<a class="m-header-toolbar-btn userpageBtn" href="{:U('user/login')}" title="我的夺宝"><i class="ico ico-userpage"></i></a>
+				<php> }</php>
+			</div>
+		</div>
+	</div>
+	<!-- 导航栏 -->
+	<div class="m-nav">
+		<div class="g-wrap">
+			<ul class="m-nav-list">
+				<li class="selected"><a href="{:U('index/index')}"><span>首页<span></span></span></a></li>
+				
+				<php> if(session('user_auth_sign2')!=''){</php><li><a href="{:U('user/info')}"><span>个人中心<span></span></span></a></li><php>}</php>
+				<php> if(session('user_auth_sign2')!=''){</php><li><a href="{:U('team/index')}"><span>管理中心<span></span></span></a></li><php>}</php>
+			</ul>
+		</div>
+	</div>
+</div>
+</block>

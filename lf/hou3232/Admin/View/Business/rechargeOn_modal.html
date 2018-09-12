@@ -1,0 +1,24 @@
+
+<div>
+<form action="{:U('Business/toOn_recharge')}"  target="ajax" method="post">
+	<input type="hidden" name="id" value="<?=I('id')?>"/>
+<table cellpadding="0" cellspacing="0" width="340" class="layout">
+	<tr>
+		<th>用户名：</th>
+		<td><input type="text" value="<?=I('username')?>" /></td>
+	</tr>
+	<tr>
+		<th>充值金额：</th>
+		<td><input type="text" name="amount" readonly="readonly" value="<?=I('amount')?>" /></td>
+	</tr>
+	<tr>
+		<th>实际到账：</th>
+		<td><input type="text" name="rechargeAmount" value="<?=I('amount')?>"/></td>
+	</tr>
+	<tr>
+		<th><span class="spn9">提示：</span></th>
+		<td><span class="spn9">实际到账默认为充值金额，可更改！</span></td>
+	</tr>
+</table>
+</form>
+</div>

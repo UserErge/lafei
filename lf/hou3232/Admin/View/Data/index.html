@@ -1,0 +1,109 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>开奖数据</h2>
+	</div>
+	
+	<ul class="tab-nav nav">
+		<?php foreach($types as $data){ ?>
+			<li <?=$this->iff($type==$data['id'], 'class="current"','')?>><a href="{:U('?type='.$data['id'])}"><?=$data['shortName']?></a></li>
+		<?php } ?>
+	</ul>
+
+	<!-- 高级搜索 -->
+	<form action="{:U('index')}" method="post">
+		<div class="search-form fr cf">
+			<div class="sleft">
+				<input type="hidden" name='type' value='{$type}'>
+				期号：
+				<input type="text" name="number" class="search-input" value="{:I('number')}" placeholder="请输入期号">
+				<!-- <a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a> -->
+			</div>
+			<div class="sleft">
+				<input type="hidden" name='type' value='{$type}'>
+				日期：
+				<input type="text" name="date" id="date" class="search-input" value="{:date('Y-m-d',$date)}" placeholder="请输入日期">
+				<!-- <a class="sch-btn" href="javascript:;" id="search2" url="{:U('index')}"><i class="btn-search"></i></a> -->
+			</div>
+			<div class="sbtn">
+				<button type="submit" class="btn" id="search">查 找</button>
+			</div>	
+		</div>
+	</form>
+
+	<div class="data-table table-striped">
+		<table>
+			<thead>
+				<tr>
+
+					<th>期数</th>
+					<th>开奖时间</th>
+					<th>开奖数据</th>
+					<th>状态</th>
+					<th>投注金额</th>
+					<th>中奖金额</th>
+					<th>返点金额</th>
+					<th>手动开奖</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="_list" id="config">
+					<tr>
+						<td>{$config.actionNo}</td>
+						<td>{$config.actionTime}<input type="hidden" name="id" value="{$config.id}"></td>
+						<td>{$config.data}</td>
+						<td><?=$this->iff($config['data']!='--', '<font color="red">已开奖</font>', '未开奖')?></td>
+						<td><?=$this->ifs($config['betAmount'], '--')?></td>
+						<td><?=$this->ifs($config['zjAmount'], '--')?></td>
+						<td><?=$this->ifs($config['fanDianAmount'], '--')?></td>
+						<td>
+							<a target="modal" width="340" modal="true" button="确定:dataAddCode|取消:defaultCloseModal" href="{:U('add?type='.$type.'&actionNo='.$config['actionNo'].'&actionTime='.$config['actionTime'])}">添加</a>
+							<php>if($config['data']!='--') {</php>
+							<a href="{:U('pai_jiang')}" target="ajax" data-type="<?=$type?>" data-number="<?=$config['actionNo']?>" data-time="<?=$config['actionTime']?>" data-data="<?=$config['data']?>" onajax="setKjData" call="setKj" title="重新对没有开奖的投注开奖">派奖</a>
+							<php>}</php>
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+		<!-- 分页 -->
+	    <div class="page">
+	        {$_page}
+	    </div>
+	</div>
+</block>
+
+<block name="script">
+	<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+	<script>
+	$(function(){
+		$('#date').datetimepicker({
+			format: 'yyyy-mm-dd',
+			language:"zh-CN",
+			minView:2,
+			autoclose:true
+		});
+		showTab();
+	});
+	</script>
+	<script type="text/javascript">
+	
+	//回车搜索
+	$("body").keyup(function(e){
+		if(e.keyCode === 13){
+			$("#search").click();
+			return false;
+		}
+	});
+
+
+	//导航高亮
+	$('.side-sub-menu').find('a[href="{:U('Data/index')}"]').closest('li').addClass('current');
+	</script>
+</block>

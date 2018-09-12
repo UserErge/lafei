@@ -1,0 +1,44 @@
+<?php
+	$stateName=array('已到帐', '正在办理', '已取消', '已支付', '失败');
+?>
+<ul class="w-goodsList w-goodsList-l m-user-goodsList" data-pro="list">
+	<php>foreach($data as $vo){</php>
+	<li id="pro-view-8" class="w-goodsList-item">
+	<div class="w-goods w-goods-l w-goods-ing m-user-goods">
+		<div class="w-goods-info">
+			<p>
+				用户名：{$vo.username} 
+			</p>
+			<p>
+				用户类型：<?=$this->iff($vo['type'],'代理','会员')?>
+			</p>
+			<p>
+				返点：{$vo.fanDian}
+			</p>
+			<p>
+				余额：{$vo.coin}
+			</p>
+			<p>
+				注册时间：<?=date('Y/m/d H:i',$vo['regTime'])?>
+			</p>
+			<p>
+				状态：<?=$this->iff($vo['enable'],'正常','冻结')?>
+			</p>
+			
+			<?php if($user['uid']!=$vo['uid'] && $vo['parentId']==$user['uid']){ ?>
+			<p>
+				<a class="text-primary updateMember" href="#" usertype="{$vo.type}" title="{$vo.username}" min="{$vo.fanDian}" max="{$user.fanDian}">修 改</a>&nbsp;&nbsp;
+			</p>
+			<?php } ?>
+			
+			
+		</div>
+	</div>
+	</li>
+	<php>} if(!$data) {</php>
+	<div style="text-align:center">当前条件下没有记录，请更改条件后搜索</div>
+	<php>}</php>
+</ul>
+<div class="page">
+	{$_page}
+</div>

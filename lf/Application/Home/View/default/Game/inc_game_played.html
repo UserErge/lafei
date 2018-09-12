@@ -1,0 +1,38 @@
+<div id="tabCon">
+	<div class="tabcon_n">									
+		<ul id="tabbar-div-s3">
+			<li class="tz_li">
+				<span class="tz_title"></span>
+				<php>
+					$playeds2 = array();
+					$i=0;	
+					foreach($playeds as $play)
+					{
+						if($play['groupId']==$groupId && $play['enable']==1)
+						{
+							$playeds2[$i] = $play;
+							$i++;
+						}
+					} 
+					
+					if(!$playeds2) {echo '<div style="height:150px;margin-top:50px;text-align:center;color:#f00">暂无玩法</div>';return;} 
+					if(!$playedId) $playedId=$playeds2[0]['id'];
+					
+					if($playeds2) foreach($playeds2 as $played){
+						if($playedId==$played['id']){
+							$tpl=$played['playedTpl'];
+							$current_played=$played;
+						}
+						if($played['enable']){
+				</php>
+				<div class="<php> if($played['id']==$playedId) echo 'act';else echo 'back';</php>" data="{:U('game/played?type='.$type.'&playedId='.$played['id'])}" data-id="{$played['id']}" onclick="selectPlayed(this)">
+					<span class="method-tab-front" id="smalllabel_0_0">{$played['name']}</span>
+				</div>
+				<php>}}</php>
+			</li>										
+		</ul>
+	</div>
+</div>
+<span id="played-content">
+	<include file="inc_game_content" />
+</span>

@@ -1,0 +1,5 @@
+
+2016-08-31 23:36:03|ht|Sjt_Return=1|Sjt_TransID[486795]|Sjt_factMoney[1.000]|Sjt_Sign[2fbfe131df7aa52dea5082dae399acde--2fbfe131df7aa52dea5082dae399acde]
+2016-08-31 23:37:32|ht|Sjt_Return=1|Sjt_TransID[739100]|Sjt_factMoney[1.000]|Sjt_Sign[e5f552ac663b3ab6f4f76a92a0a41a8b--e5f552ac663b3ab6f4f76a92a0a41a8b]
+2016-08-31 23:52:57|ht|Sjt_Return=1|Sjt_TransID[759206]|Sjt_factMoney[1.000]|Sjt_Sign[5a825fef3e4dc390926577b4b07210f1--5a825fef3e4dc390926577b4b07210f1]
+2016-08-31 23:55:31|ht|Sjt_Return=1|Sjt_TransID[179856]|Sjt_factMoney[1.000]|Sjt_Sign[c4c806a77a58cae82f5c2dbe3e75392e--c4c806a77a58cae82f5c2dbe3e75392e]

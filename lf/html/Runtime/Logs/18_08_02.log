@@ -1,0 +1,36 @@
+[ 2018-08-02T16:24:57+08:00 ] ::1 /lf/html/index.php?s=/home/user/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000104s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000410s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\lf\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `gygy_params` [ RunTime:0.000551s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in C:\lf\Application\Home\Controller\HomeController.class.php on line 118 and defined C:\lf\ThinkPHP\Library\Think\Model.class.php 第 1501 行.
+NOTIC: [8] Undefined variable: where C:\lf\ThinkPHP\Library\Think\Model.class.php 第 1509 行.
+NOTIC: [8] Undefined variable: where C:\lf\ThinkPHP\Library\Think\Model.class.php 第 1512 行.
+NOTIC: [8] Undefined variable: where C:\lf\ThinkPHP\Library\Think\Model.class.php 第 1520 行.
+SQL: SHOW COLUMNS FROM `gygy_members` [ RunTime:0.000541s ]
+SQL: SELECT * FROM `gygy_members` WHERE ( `username` = 'ceshi' ) LIMIT 1   [ RunTime:0.000313s ]
+
+[ 2018-08-02T16:25:01+08:00 ] ::1 /lf/html/index.php?s=/home/user/logined.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000104s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000346s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000040s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\lf\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `gygy_params` [ RunTime:0.000877s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in C:\lf\Application\Home\Controller\HomeController.class.php on line 118 and defined C:\lf\ThinkPHP\Library\Think\Model.class.php 第 1501 行.
+NOTIC: [8] Undefined variable: where C:\lf\ThinkPHP\Library\Think\Model.class.php 第 1509 行.
+NOTIC: [8] Undefined variable: where C:\lf\ThinkPHP\Library\Think\Model.class.php 第 1512 行.
+NOTIC: [8] Undefined variable: where C:\lf\ThinkPHP\Library\Think\Model.class.php 第 1520 行.
+SQL: SHOW COLUMNS FROM `gygy_members` [ RunTime:0.000704s ]
+SQL: SELECT * FROM `gygy_members` WHERE ( `username` = 'ceshi' ) AND ( `password` = 'cadc9f502a3bbd0ad93246e2af2c593e' ) LIMIT 1   [ RunTime:0.000314s ]
+SQL: SHOW COLUMNS FROM `gygy_member_session` [ RunTime:0.000550s ]
+SQL: INSERT INTO `gygy_member_session` (`uid`,`username`,`session_key`,`loginTime`,`accessTime`,`loginIP`) VALUES (286,'ceshi',0,1533198301,1533198301,0) [ RunTime:0.000169s ]
+SQL: UPDATE `gygy_member_session` SET `isOnLine`=0 WHERE ( uid=286 and id<2131 ) [ RunTime:0.000399s ]
+
+[ 2018-08-02T16:30:43+08:00 ] ::1 /lf/html/admin.php?s=/admin/public/login.html
+NOTIC: D方法实例化没找到模型类Admin\Model\ParamsModel
+

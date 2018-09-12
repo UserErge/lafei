@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>首页－{:S('WEB_NAME')}</title>
+<link href="__CSS__/bootstrap.min.css" rel="stylesheet">
+<link href="__CSS__/nifty.min.css" rel="stylesheet">
+<link href="__CSS__/bootstrap-tour.min.css" rel="stylesheet">
+<link href="__CSS__/font-awesome.min.css" rel="stylesheet">
+<link href="__CSS__/css.min.css" rel="stylesheet">
+<link href="__CSS__/index.min.css" rel="stylesheet">
+<style>
+body, html {
+	overflow: hidden;
+}
+</style>
+
+<link id='theme' rel='stylesheet' />
+
+
+</head>
+<div id="container" class="effect mainnav-fixed navbar-fixed footer-fixed mainnav-lg">
+	<header id="navbar">
+	<div id="navbar-container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="javascript:;">
+			<img alt="Logo" class="brand-icon" src="__IMG__/frame/logo.png">
+			<div class="brand-title">
+				<span class="brand-text"></span>
+			</div>
+			</a>
+		</div>
+		<div class="navbar-content clearfix">
+			<a class="mainnav-toggle" href="javascript:;"><i></i></a>
+			<ul class="nav navbar-top-links pull-left">
+				<li class="dropdown" id="user_message">
+				<a class="mega-dropdown-toggle" href="{$settings.kefuGG}" target="_blank">
+				<i class="fa fa-user fa-lg"></i><em>客服</em>
+				</a>
+				</li>
+				<li class="dropdown" id="user_notice">
+				<a id="fastdata-notice-href" class="dropdown-toggle" href="{:U('notice/index')}" target="pageframe">
+				<i class="fa fa-bell fa-lg"></i><em>公告</em>
+				<span class="badge badge-header badge-danger" id="user_noticecount" style="display:none; top:0px;">0</span>
+				</a>
+				</li>
+				<li class="mega-dropdown" id="user_main_menu">
+				<a class="mega-dropdown-toggle" href="#">
+				<i class="fa fa-th-large fa-lg"></i><em>菜单</em>
+				</a>
+				<div class="dropdown-menu mega-dropdown-menu">
+					<div class="clearfix">
+						<div class="col-sm-12 col-md-3">
+							<div class="text-center czbg pad-all">
+								<a href="javascript:$.niftyNoty({type: 'danger',icon: 'fa fa-minus',message: '请联系在线客服',container: 'floating',timer: 3000});">
+                                        提交意见
+								</a>
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-3" id="menu_member">
+							<ul class="list-unstyled">
+								<li class="dropdown-header"><img alt="" src="__IMG__/frame/11.png">会员中心</li>
+								<li>
+								<a href="{:U('user/info')}" target="pageframe">
+                                            用户中心
+								<span class="pull-right label label-danger">
+                                                New
+								</span>
+								</a>
+								</li>
+								<li>
+								<a href="{:U('user/password')}" target="pageframe">
+									<span class="pull-right label label-danger">
+													Hot
+									</span>修改密码
+								</a>
+								</li>
+								<li><a href="{:U('user/bank')}" target="pageframe">银行资料</a></li>								
+															
+							</ul>
+						</div>
+						<div class="col-sm-4 col-md-3" id="menu_proxy">
+							<ul class="list-unstyled">
+								<li class="dropdown-header"><img alt="" src="__IMG__/frame/12.png">代理中心</li>
+								<li><a href="{:U('team/member')}" target="pageframe"><span class="pull-right label label-danger">Hot</span>会员管理</a></li>
+								<li><a href="{:U('team/linklist')}" target="pageframe" id="autoreg">自动注册</a></li>
+								<li><a href="{:U('team/report')}" target="pageframe">消费报表</a></li>								
+								<li><a href="{:U('team/record')}" target="pageframe">投注记录</a></li>
+								<li><a href="{:U('team/coin')}" target="pageframe">帐变明细</a></li>
+								<li><a href="{:U('team/rechargerecord')}" target="pageframe">充值记录</a></li>
+								<li><a href="{:U('team/cashrecord')}" target="pageframe">提现记录</a></li>								
+							</ul>
+						</div>
+						<div class="col-sm-4 col-md-3">
+							<ul class="list-unstyled">
+								<li class="dropdown-header"><img alt="" src="__IMG__/frame/13.png">服务中心</li>
+								
+								<li>
+								<a href="{:U('activity/xiaofei')}" target="pageframe">
+								<span class="pull-right badge badge-success"></span>最新活动
+								</a>
+								</li>
+								<li><a href="{:U('notice/index')}" target="pageframe">通知公告</a></li>
+								<li class="divider"></li>
+								<li class="dropdown-header"><img alt="" src="__IMG__/frame/14.png">资金中心</li>
+								<li>
+								<a href="{:U('recharge/index')}" target="pageframe">
+								<span class="pull-right badge badge-purple">
+                                                秒到
+								</span> 我要充值
+								</a>
+								</li>
+								<li>
+								<a href="{:U('cash/index')}" target="pageframe">
+								<span class="pull-right badge badge-purple">
+                                                秒到
+								</span>我要提现
+								</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				</li>
+			</ul>
+			<span id="user-span"><include file="User/user"/></span>
+		</div>
+	</div>
+	</header>
+	<div class="boxed">
+		<div id="content-container" style="padding-bottom: 0">
+			<div id="page-content" style="padding: 0; margin: 0">
+				<iframe id="pageframe" name="pageframe" src="{:U('index/main')}" style="width: 100%; height: 889px;" allowtransparency="true" frameborder="0">
+				</iframe>
+			</div>
+		</div>
+		<nav id="mainnav-container">
+		<div id="mainnav">
+			<div id="mainnav-shortcut" class="mainnav-widget">
+				<ul class="list-unstyled newmenu">
+					<li title="" data-original-title="" class="col-xs-6">
+					<a class="shortcut-grid" href="{:U('recharge/index')}" target="pageframe">
+					<img alt="" src="__IMG__/frame/c.png"><strong>充值</strong>
+					</a>
+					</li>
+					<li title="" data-original-title="" class="col-xs-6">
+					<a class="shortcut-grid" href="{:U('cash/index')}" target="pageframe">
+					<img alt="" src="__IMG__/frame/t.png"><strong>提现</strong>
+					</a>
+					</li>
+				</ul>
+			</div>
+			<div id="mainnav-menu-wrap">
+				<div class="nano has-scrollbar">
+					<div style="right: -17px;" tabindex="0" class="nano-content">
+						<ul id="mainnav-menu" class="list-group">
+							<li class="list-header">导航</li>
+							<li class="active-link">
+							<a class="" title="" data-original-title="" href="{:U('index/main')}" target="pageframe">
+							<img alt="" src="__IMG__/frame/0.png">
+							<span class="menu-title">
+							<strong>首页</strong>
+							</span>
+							</a>
+							</li>
+							<li class="list-divider"></li>
+							<li class="list-header">游戏列表</li>
+							<li class="active">
+							<a class="" title="" data-original-title="" href="#">
+							<img alt="" src="__IMG__/frame/1.png">
+							<span class="menu-title">时时彩</span>
+							<i class="arrow"></i>
+							</a>
+							<ul aria-expanded="true" class="pop-in collapse in">
+								<li><a href="{:U('game/game?type=1&groupId=2')}" target="pageframe">重庆时时彩<span class="pull-right badge badge-danger">热</span></a></li>
+								<li><a href="{:U('game/game?type=3&groupId=2')}" target="pageframe">天津时时彩</a></li>
+								<li><a href="{:U('game/game?type=12&groupId=2')}" target="pageframe">新疆时时彩</a></li>
+								<li><a href="{:U('game/game?type=14&groupId=2')}" target="pageframe">五分彩<span class="pull-right badge badge-success">新</span></a></li>
+								<li><a href="{:U('game/game?type=34&groupId=2')}" target="pageframe">二分彩<span class="pull-right badge badge-success">新</span></a></li>
+                                <li><a href="{:U('game/game?type=5&groupId=2')}" target="pageframe">激情60秒<span class="pull-right badge badge-success">新</span></a></li>								
+                                <li><a href="{:U('game/game?type=35&groupId=2')}" target="pageframe">韩国1.5分彩<span class="pull-right badge badge-success">新</span></a></li>										
+							</ul>
+							</li>
+							<li>
+							<a class="" title="" data-original-title="" href="#">
+							<img alt="" src="__IMG__/frame/2.png">
+							<span class="menu-title">11选5</span>
+							<i class="arrow"></i>
+							</a>
+							<ul class="collapse pop-in">
+								<li><a href="{:U('game/game?type=6&groupId=10')}" target="pageframe">广东11选5<span class="pull-right badge badge-danger">热</span></a></li>
+								<li><a href="{:U('game/game?type=15&groupId=10')}" target="pageframe">重庆11选5</a></li>
+								<li><a href="{:U('game/game?type=16&groupId=10')}" target="pageframe">江西11选5</a></li>							
+							</ul>
+							</li>
+							<li>
+							<a class="" title="" data-original-title="" href="#">
+							<img alt="" src="__IMG__/frame/3.png">
+							<span class="menu-title">快乐彩</span>
+							<i class="arrow"></i>
+							</a>
+							<ul class="collapse pop-in">
+								<li><a href="{:U('game/game?type=24&groupId=38')}" target="pageframe">北京快乐8</a></li>
+								<li><a href="{:U('game/game?type=20&groupId=26')}" target="pageframe">北京PK10</a></li>
+							</ul>
+							</li>
+							<li>
+							<a class="" title="" data-original-title="" href="#">
+							<img alt="" src="__IMG__/frame/4.png">
+							<span class="menu-title">数字三</span><i class="arrow"></i>
+							</a>
+							<ul class="collapse pop-in">
+								<li><a href="{:U('game/game?type=9&groupId=12')}" target="pageframe">福彩3D<span class="pull-right badge badge-danger">热</span></a></li>
+								<li><a href="{:U('game/game?type=10&groupId=12')}" target="pageframe">排列三</a></li>								
+							</ul>
+							</li>
+							<li class="list-divider"></li>
+							<li class="list-header">服务中心</li>
+							<li>
+							<a class="" title="" data-original-title="" href="{:U('activity/xiaofei')}" target="pageframe">
+							<img alt="" src="__IMG__/frame/5.png">
+							<span class="menu-title">
+                                    优惠活动
+							<span class="label label-mint pull-right">荐</span>
+							</span>
+							</a>
+							</li>
+							
+							<li>
+							<a class="" title="" data-original-title="" href="javascript:$.niftyNoty({type: 'danger',icon: 'fa fa-minus',message: '请联系在线客服',container: 'floating',timer: 3000});">
+							<img alt="" src="__IMG__/frame/tousu1.png">
+							<span class="menu-title">投诉建议</span>
+							</a>
+							</li>
+							<li id="kefulink">
+							<a class="" title="" data-original-title="" href="{$settings.kefuGG}" target="_blank">
+							<img alt="" src="__IMG__/frame/7.png">
+							<span class="menu-title">在线客服</span><span class="pull-right badge badge-danger" style="display:none" id="j-kf-count">0</span>
+							</a>
+							</li>
+							<li class="list-divider"></li>
+							<li class="list-header">常用工具</li>
+							<li>
+							<a class="" title="" data-original-title="" href="javascript:$.niftyNoty({type:%20'danger',icon:%20'fa%20fa-minus',message:%20'%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%AE%8C%E5%96%84%E4%B8%AD%E3%80%82%E3%80%82%E3%80%82%E3%80%82%E3%80%82%E3%80%82',container:%20'floating',timer:%203000});">
+							<img alt="" src="__IMG__/frame/8.png">
+							<span class="menu-title">
+                                    自动投注软件
+							<span class="label label-mint pull-right badge-danger">热</span>
+							</span>
+							</a>
+							</li>
+							<li>
+							<a class="" title="" data-original-title="" href="javascript:$.niftyNoty({type:%20'danger',icon:%20'fa%20fa-minus',message:%20'%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%AE%8C%E5%96%84%E4%B8%AD%E3%80%82%E3%80%82%E3%80%82%E3%80%82%E3%80%82%E3%80%82',container:%20'floating',timer:%203000});">
+							<img alt="" src="__IMG__/frame/9.png">
+							<span class="menu-title">遗漏分析软件</span>
+							</a>
+							</li>
+						</ul>
+					</div>
+					<div style="display: none;" class="nano-pane">
+						<div style="height: 20px; transform: translate(0px, 0px);" class="nano-slider">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</nav>
+	</div>
+</div>
+
+<div class="sidemsg" id="chat_main">
+	<div class="sidetitle">
+		<img alt="" src="__IMG__/frame/tx.jpg">会员昵称 
+		<span>
+		<a href="javascript:void(0)" class="minimask" id="chat_mini">
+		<img alt="" src="__IMG__/frame/mini.png" title="最小化在线客服">
+		</a>
+		<a href="javascript:void(0)" class="closemask" id="chat_exit">
+		<img alt="" src="__IMG__/frame/cha.png" title="关闭在线客服">
+		</a>
+		</span>
+	</div>
+	<div class="sidemsgbox">
+		<div class="sidemsgboxleft">
+			<div class="kefubox">
+				<div style="padding:5px; padding-bottom:0;margin:0" class="chathead">
+					<div class="input-group mar-btm cz">
+						<input placeholder="查找联系人" class="form-control" id="memberNameChat" type="text">
+						<i class="fa fa-search" id="queryMemberChat"></i>
+					</div>
+				</div>
+				<div class="kefuboxcontent" id="kefu_list">
+					<div class="list-group bg-trans renlist" id="renlist">
+						<h4 class="pad-hor text-thin">在线客服</h4>
+						<div class="list-group bg-trans">
+							<a href="javascript:;" class="list-group-item" mark="" nick="" mode="customservice" id="customservice">
+							<div class="media-left">
+								<img class="img-circle img-xs" src="__IMG__/frame/av4.png" alt="Profile Picture">
+							</div>
+							<div class="media-body">
+								<div class="text-lg">
+									在线客服
+								</div>
+							</div>
+							</a>
+							<a href="javascript:;" class="list-group-item" mark="xiaomi520" nick="上级" mode="superior" id="superior">
+							<div class="media-left">
+								<img class="img-circle img-xs" src="__IMG__/frame/av1.png" alt="Profile Picture" id="imgSupState">
+							</div>
+							<div class="media-body">
+								<div class="text-lg">
+									上级
+								</div>
+								<span class="text-danger text-bold" id="onlineSupState">在线状态</span>
+								<span class="pull-right badge badge-danger" style="display:none;" id="sup_chat_num"></span>
+							</div>
+							</a>
+						</div>
+						<h4 class="pad-hor text-thin">
+						<span class="pull-right badge badge-mint" id="online_member_count">0</span>在线下级
+						</h4>
+						<div class="list-group bg-trans" id="online_members">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sidemsgboxright">
+			<div id="chat-body">
+				<div class="chattitle backkefubox">
+					<span id="chatTitle">在  线  客  服</span>
+				</div>
+				<div id="chatlist">
+					<div class="chatbox" id="chatbox_customservice" style="display:none;">
+					</div>
+				</div>
+				<div class="panel-footer" id="chatSend" style="padding:0; visibility:hidden;">
+					<div class="chatfooter">
+						<i class="att" id="uploadfile"></i>
+						<input id="txtContent" maxlength="500" placeholder="请输入消息内容" type="text">
+						<button class="btn btn-primary sendbtn" type="button" id="sendcontent" onclick="sendContent('');">发送消息</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="onlineservice">
+	<label id="j-kf-msg-count" style="display:none;">0</label>
+	<input class="onlineservicebtn" value="" title="拖拽可移动位置，双击可显示在线客服" type="button">
+</div>
+<div id="j-play" style="display: none; width: 0px; height: 0px;">
+	<img style="width: 0px; height: 0px; display: none;" id="jp_poster_0"><audio src="__IMG__/frame/5097.mp3" preload="metadata" id="jp_audio_0"></audio>
+</div>
+<input name="file" id="file" style="display:none;" type="file">
+<input value="xiaomi520" id="hdMemberName" type="hidden">
+<input value="1" id="hdMemberType" type="hidden">
+<script src="__JS__/jquery.min.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/nifty.min.js"></script>
+<script src="__JS__/common.min.js"></script>
+<script src="__JS__/fastdata.js"></script>
+<script src="__JS__/jquery.jplayer.min.js"></script>
+<script src="__JS__/layout.min.js"></script>
+<script language="javascript" type="text/javascript" src="/nitalk/js/fonts.js?modidate=20160317003"></script>
+<script language="javascript" type="text/javascript" src="/nitalk/js/bundle.js?modidate=20160317003"></script>
+<script language="javascript" type="text/javascript">
+  if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	nitalk();
+	configtalk('<?php echo $user["username"];?>', '<?php echo md5($user['password']);?>', 'http://<?php echo $_SERVER['SERVER_NAME'];?>/nitalk/', 'newbee', '{:S('WEB_NAME')}' , '{:U('team/linkList')}', '');
+	$(document).ready(function(){
+	  inittalk(); 
+	});
+  }
+</script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$(".mega-dropdown a[target='pageframe']").unbind("click").on("click", function () {
+			$('.mega-dropdown').removeClass('open');
+		});
+	});
+</script>
+<script>
+	$(document).ready(function () {
+		var bodyheight = jQuery(window).height() - 54;
+		$("#pageframe").css("height", bodyheight);
+		$(".mainnav-toggle").click(
+			function toggle() {
+				$(this).toggleClass("mainnav-toggle2")
+				$(".brand-icon").toggleClass("brand-icon2")
+				$(".newmenu").toggleClass("newmenu2")
+			}
+		);            
+	});
+	$(window).resize(function () {
+		var bodyheight = jQuery(window).height() - 54;
+		$("#pageframe").css("height", bodyheight);
+	})
+</script>	
+
+
